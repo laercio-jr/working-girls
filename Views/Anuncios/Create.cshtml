@@ -13,8 +13,7 @@
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="UserId" class="control-label">Conta de postagem</label>
-                    <input asp-for="UserId" class="form-control" asp-items="ViewBag.UserId" placeholder=@User.Identity.Name disabled readonly>
+                    <input type="hidden" asp-for="UserId" class="form-control" asp-items="ViewBag.UserId" value="@User.Identity.Name"/>
                     <span asp-validation-for="UserId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
