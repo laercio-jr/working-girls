@@ -10,6 +10,8 @@ namespace ProjetoEntrega15_02.Areas.Identity.Pages.Account.Manage
     {
         public static string Index => "Index";
 
+        public static string Anuncios => "Anuncios";
+
         public static string Email => "Email";
 
         public static string ChangePassword => "ChangePassword";
@@ -27,6 +29,7 @@ namespace ProjetoEntrega15_02.Areas.Identity.Pages.Account.Manage
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
         public static string EmailNavClass(ViewContext viewContext) => PageNavClass(viewContext, Email);
+        public static string AnunciosNavClass(ViewContext viewContext) => PageNavClass(viewContext, Anuncios);       
 
         public static string ChangePasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangePassword);
 

@@ -27,6 +27,11 @@ namespace ProjetoEntrega15_02.Controllers
             return View(await _context.Anuncios.ToListAsync());
         }
 
+        public async Task<IActionResult> AnunciosUser()
+        {
+            return View(await _context.Anuncios.ToListAsync());
+        }
+
         // GET: Anuncios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
