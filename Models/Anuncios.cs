@@ -34,5 +34,6 @@ namespace ProjetoEntrega15_02.Models
         [Column("Estado")]
         [Display(Name = "Estado")]
         public string Estado { get; set; }
+
     }
 }
