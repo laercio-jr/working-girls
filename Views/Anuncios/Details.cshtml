@@ -1,7 +1,7 @@
 ﻿@model ProjetoEntrega15_02.Models.Anuncios
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
 <div class="container row emp-profile mx-auto">
@@ -52,13 +52,13 @@
             if (Model.UserId == User.Identity.Name)
             {
 
-                <a class="btn w-25 btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+                <a class="btn w-25 btn-primary align-self-center" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
             }
         }
-        <a class="btn w-25 btn-primary" asp-action="Index">Voltar</a>
+        <a class="btn w-25 btn-primary align-self-center" asp-action="Index">Voltar</a>
         @*<a class="btn w-25 btn-primary" asp-action="Edit" asp-route-id="@Model.AnuncioId">Editar</a>*@
 
-        <button type="button" class="btn w-25 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Converse com a prestadora </button>
+        <button type="button" class="btn w-25 btn-primary align-self-center" data-toggle="modal" data-target="#exampleModalCenter"> Converse com a prestadora </button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
