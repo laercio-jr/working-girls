@@ -3,13 +3,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjetoEntrega15_02.Areas.Identity;
 using ProjetoEntrega15_02.Data;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -27,6 +30,18 @@ namespace ProjetoEntrega15_02
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            /*
+            services.AddIdentity<IdentityUser, IdentityRole>()
+        .AddErrorDescriber<IdentityPortugueseMessages>();*/
+
+            /*
+            services.AddIdentity<IdentityUser, IdentityRole>()
+        // localize identity error messages
+            .AddErrorDescriber<IdentityPortugueseMessages>()
+            .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+            */
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -67,5 +82,13 @@ namespace ProjetoEntrega15_02
                 endpoints.MapRazorPages();
             });
         }
+    }
+
+    internal class RoleIdentity
+    {
+    }
+
+    internal class UserIdentity
+    {
     }
 }

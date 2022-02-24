@@ -48,10 +48,10 @@
 
 .card-img-left {
     width: 45%;
-    /* Link to your background image using in the property below! */
-    /*background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');*/
     background: scroll center url('../img/notelefone.jpg');
     background-size: cover;
+    min-height: 401px;
+}
 }
 
 .btn-login {
