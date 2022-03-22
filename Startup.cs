@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace ProjetoEntrega15_02
 {
     public class Startup
@@ -30,31 +31,40 @@ namespace ProjetoEntrega15_02
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             /*
-            services.AddIdentity<IdentityUser, IdentityRole>()
-        .AddErrorDescriber<IdentityPortugueseMessages>();*/
+            services.AddDefaultIdentity<IdentityUser>()
+         .AddErrorDescriber<IdentityPortugueseMessages>();
 
-            /*
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            .AddEntityFrameworkStores<ApplicationDbContext>().AddErrorDescriber<IdentityPortugueseMessages>();
+            
             services.AddIdentity<IdentityUser, IdentityRole>()
-        // localize identity error messages
-            .AddErrorDescriber<IdentityPortugueseMessages>()
-            .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+        .AddErrorDescriber<IdentityPortugueseMessages>();
 
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddErrorDescriber<IdentityPortugueseMessages>();
             */
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddErrorDescriber<IdentityPortugueseMessages>();
             services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            /*
+            var cultureInfo = new CultureInfo("pt-BR");
+            cultureInfo.NumberFormat.CurrencySymbol = "R$";
+
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+            */
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

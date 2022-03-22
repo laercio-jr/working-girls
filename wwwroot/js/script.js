@@ -2,6 +2,22 @@
     interval: 8000,
 })
 
+$('#modalCookie').modal('show')
+
+
+if (localStorage.getItem('cookieAceito') != 1) {
+    $('#modalCookie').modal('show')
+} else {
+    $('#modalCookie').modal('hide')
+}
+
+$(".accept").click(function () {
+
+    $('#modalCookie').modal('hide')
+    localStorage.setItem('cookieAceito', 1)
+});
+
+localStorage.getItem('idade')
 
 
     (function () {
