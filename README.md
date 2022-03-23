@@ -3,4 +3,4 @@
 # Site em desenvolvimento!
 
 Site hospedado e funcionando: http://workinggirls.somee.com/ <br>
-Front end na pasta "Frontend React"
+Front end na pasta "frontend-react"
