@@ -37,6 +37,12 @@ namespace ProjetoEntrega15_02.Controllers
         {
             return View();
         }
+
+
+        public IActionResult CookiesPolicy()
+        {
+            return View();
+        }
         public IActionResult Perfil()
         {
             return View();
